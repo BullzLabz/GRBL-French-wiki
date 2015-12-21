@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>GRBL | A Propos</title>
+
+		<!-- stylesheets -->
+		<link rel="stylesheet" href="css/default.css" />
+		<link rel="stylesheet" href="css/component.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+
+		<!-- javascript -->
+		<script src="js/modernizr.custom.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="js/markdown.js"></script>
+
+	</head>
+	<body class="cbp-spmenu-push">
+		<script>
+			//load the navbar
+			$("body").load("include.html");
+		</script>
+
+		<script>
+			$(document).ready(function(){
+				$.ajax({
+						//change this path to the appropriate markdown file
+						url:"content/Home-fr.md",
+						dataType: "text",
+						success: function(response){
+						//here is the magic. convert markdown to html, inject it into content div
+						$("#content").append(markdown.toHTML(response,'Maruku'));
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

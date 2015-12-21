@@ -1,0 +1,21 @@
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 220">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #2e3192;
+      }
+
+      .cls-3 {
+        fill: #c1272d;
+      }
+    </style>
+  </defs>
+  <title>fr-flag</title>
+  <rect id="white" class="cls-1" width="340" height="220"/>
+  <rect id="blue" class="cls-2" width="113" height="220"/>
+  <rect id="red" class="cls-3" x="227" width="113" height="220"/>
+</svg>

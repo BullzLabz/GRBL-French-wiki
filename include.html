@@ -1,0 +1,74 @@
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+	<h3 class=""><img src="img/logo.svg" style="max-height: 100px; max-width: 100%;"/></h3>
+	<a class="" href="index.html">Accueil</a>
+	<a class="" href="compiler_grbl.html">Compiler Grbl</a>
+	<a class="" href="grbl7.html">Configurer Grbl v0.7</a>
+	<a class="" href="grbl8.html">Configurer Grbl v0.8</a>
+	<a class="" href="grbl9.html">Configurer Grbl v0.9</a>
+	<a class="" href="connecter_grbl.html">Connecter Grbl</a>
+	<a class="" href="dev_et_besoins.html">Developpement et besoins futur</a>
+	<a class="" href="flasher_grbl.html">Flasher Grbl sur un Arduino</a>
+	<a class="" href="faq.html">Questions fréquente</a>
+	<a class="" href="exemples_gcode.html">Exemples G-Code</a>
+	<a class="" href="interfacer_grbl.html">L'interfaçage avec Grbl</a>
+	<a class="" href="bugs_connus.html">Problèmes connus</a>
+	<a class="" href="licence.html">License</a>
+	<a class="" href="utiliser_grbl.html">Utiliser Grbl</a>
+</nav>
+
+<div class="container">
+
+	<header class="clearfix">
+		<button id="showLeftPush">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<h1>GRBL Wiki</h1>
+		<span class="subline">version française</span>
+	</header>
+
+	<div class="main">
+		<section class="buttonset" id="content">
+
+		</section>
+	</div>
+	
+	<footer>
+		<ul>
+			<li>Version francaise par <a href="">ArtFaks - BullzArtDesign</a></li>
+			<li>|</li>
+			<li><a href="https://github.com/grbl/grbl/">Grbl on Github</a></li>
+			<li>|</li>
+			<li><a href=""></a></li>
+		</ul>
+	</footer>
+</div>
+
+		<script>
+			//load the navbar
+			$("#schema").load("img/grbl-pins-diagram.svg");
+		</script>
+		
+		
+<!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+<script src="js/classie.js"></script>
+
+<script>
+	var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+		showLeftPush = document.getElementById( 'showLeftPush' ),
+		body = document.body;
+
+	showLeftPush.onclick = function() {
+		classie.toggle( this, 'active' );
+		classie.toggle( body, 'cbp-spmenu-push-toright' );
+		classie.toggle( menuLeft, 'cbp-spmenu-open' );
+		disableOther( 'showLeftPush' );
+	};
+
+	function disableOther( button ) {
+		if( button !== 'showLeftPush' ) {
+			classie.toggle( showLeftPush, 'disabled' );
+		}
+	}
+</script>

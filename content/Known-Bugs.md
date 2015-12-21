@@ -1,0 +1,7 @@
+_This wiki is intended to provide information on known bugs. Please feel free to contribute more known bugs and their work arounds as they are discovered. When a bug is fixed, they will be removed from this list._
+ 
+* While the character-counting streaming protocol is indeed very efficient and effective, there are a couple of newly uncovered issues interface writers should aware of. These are issues being worked on for the v1.0 release.
+
+ * Since the GUI is preloading Grbl's serial RX buffer with commands, Grbl will continually execute all of the queued g-code in the RX serial buffer. The first problem is if there is an error at the beginning of the RX buffer, Grbl will continue to execute the remaining buffered g-code and the GUI won't be able to control what happens. The interim solution is to check all of the g-code via the $C check mode, so all errors are vetted prior to streaming.
+
+ * When Grbl stores data to EEPROM, the AVR requires all interrupts to be disabled during this write process, including the serial RX ISR. This means that if a g-code or Grbl $ command writes to EEPROM, the data sent during the write may be lost. This is usually rare and typically occurs when streaming a G10 command inappropriately inside a program. For robustness, GUIs should track and detect these EEPROM write commands and handle them appropriately by waiting for the queue to finish executing before sending more data. Note that the simple send-response protocol doesn't not suffer from this issue.
