@@ -1,5 +1,12 @@
-# GRBL-French-Wiki
+# GRBL-French-Wiki  
+
 Une simple traduction française du wiki Grbl.
+
+Cette version française du wiki peut être consulter sur n'importe quel ordinateur avec un simple navigateur.
+
+Il inclu une librairie javascript qui s'occupe de convertir les fichiers markdown au format html.
+
+[Markdown.js](https://github.com/evilstreak/markdown-js)
 
 ***
 
